@@ -4,10 +4,12 @@ import { IPage } from '../../../model/plist';
 import { ArticuloService } from '../../../service/articulo';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Paginacion } from "../../shared/paginacion/paginacion";
+import { BotoneraRpp } from "../../shared/botonera-rpp/botonera-rpp";
 
 @Component({
   selector: 'app-articulo-plist',
-  imports: [],
+  imports: [Paginacion, BotoneraRpp],
   templateUrl: './articulo-plist.html',
   styleUrl: './articulo-plist.css',
 })
@@ -24,9 +26,6 @@ export class AdminPlist {
   publishingAction: 'publicar' | 'despublicar' | null = null;
   sortField: string = 'id';
   sortDirection: 'asc' | 'desc' = 'asc';
-  emptying: boolean = false;
-  emptyOk: number | null = null;
-  emptyError: string | null = null;
 
   // Mensajes y total
   message: string | null = null;
