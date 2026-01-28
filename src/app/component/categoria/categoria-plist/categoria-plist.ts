@@ -2,18 +2,19 @@ import { Component } from '@angular/core';
 import { ICategoria } from '../../../model/categoria';
 import { IPage } from '../../../model/plist';
 import { CategoriaService } from '../../../service/categoria';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Paginacion } from "../../shared/paginacion/paginacion";
 import { BotoneraRpp } from "../../shared/botonera-rpp/botonera-rpp";
+import { TrimPipe } from '../../../pipe/trim-pipe';
 
 @Component({
   selector: 'app-categoria-plist',
-  imports: [Paginacion, BotoneraRpp],
+  imports: [Paginacion, BotoneraRpp, TrimPipe, RouterLink],
   templateUrl: './categoria-plist.html',
   styleUrl: './categoria-plist.css',
 })
-export class CategoriaAdminPlist {
+export class CategoriaAdminPlistRouted {
 
   oPage: IPage<ICategoria> | null = null;
   numPage: number = 0;

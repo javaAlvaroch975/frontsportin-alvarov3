@@ -86,7 +86,10 @@
         <tr>
           <th style="text-align:center;" scope="row">{{ oCategoria.id }}</th>
           <td style="text-align:center;">{{ oCategoria.nombre }}</td>
-          <td style="text-align:center;">{{ oCategoria.temporada }}</td>
+          <td style="text-align:center;">
+            {{ oCategoria.temporada.descripcion | trim: 20 }}
+            {{ " (" + oCategoria.temporada.id + ")" }}
+          </td>
           <td style="text-align:center;">{{ oCategoria.equipos }}</td>
         </tr>
         }
